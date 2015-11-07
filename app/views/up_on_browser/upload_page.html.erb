@@ -1,24 +1,23 @@
 <body onload="getLocation()">
 <%= form_for @item, :url => {:action => :create} do |f| %>
-	<h1> Upload Page</h1>
+  <h1> Upload Page</h1>
 
   <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
         <a href="/home/items" class="navbar-brand">SeeK</a>
-	        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-	          <span class="icon-bar"></span>
-		          <span class="icon-bar"></span>
-			          <span class="icon-bar"></span>
-	        </button>
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
      </div>
      <div class="navbar-collapse collapse" id="navbar-main">
        <ul class="nav navbar-nav">
        <li><a href="../upload_page">Upload Page</a></li>
        <li class="nav navvar-nav">
-			 <a href="../eventer">Eventer Page</a>
-
-	  </div>
+         <a href="../eventer">Eventer Page</a>
+      </div>
    </div>
   </div>
 
@@ -38,34 +37,25 @@
             <fieldset>
               <div class="form-group">
                 <div class="col-lg-10">
-   								<%= f.label :i_name, " Item Name" %>							
-									<%= f.text_field :i_name %>
+                  <%= f.label :i_name, " Item Name" %>
+                  <%= f.text_field :i_name %>
                 </div>
-              </div>
-              <div class="form-group">
                 <div class="col-lg-10">
-							    <%= f.label :category, "Category" %>
-							    <%= f.text_field :category %>
+                  <%= f.label :category, "Category" %>
+                  <%= f.text_field :category %>
                 </div>
-              </div>
-							<div class="form-group">
-								<div class="col-lg-10">	
-   								 <%= f.label :e_key, "Event Key" %>
-    							 <%= f.text_field :e_key %>
-								</div>
-							</div>
-
-              <div class="form-group">
+                <div class="col-lg-10">	
+                  <%= f.label :e_key, "Event Key" %>
+                  <%= f.text_field :e_key %>
+                </div>
                 <div class="col-lg-10">
-  							  <%= f.label :i_detail, "Item Detail" %>
-    							<%= f.text_area :i_detail, :cols => 35, :rows=> 8 %>
+                  <%= f.label :i_detail, "Item Detail" %>
+                  <%= f.text_area :i_detail, :cols => 35, :rows=> 8 %>
                 </div>
-              </div>
-              <div class="form-group">
-						    <%= f.label :pic_data, "Picture" %>
-   						  <%= f.file_field :pic_data,accept: "image/jpeg" %>
-							</div>
-							<div class="form-group">
+                <div class="col-lg-10">
+                  <%= f.label :pic_data, "Picture" %>
+                  <%= f.file_field :pic_data,accept: "image/jpeg" %>
+                </div>
                 <div class="col-lg-10 col-lg-offset-2">
                   <button type="reset" class="btn btn-default">Reset</button>
                   <button type="submit" class="btn btn-primary">Send</button>
@@ -73,15 +63,14 @@
               </div>
             </fieldset>
           </form>
-
-					</div>
-							<div class="form-group">
-								<p class="bs-component">							
-									<a href="/home/items" class="btn btn-warning">ITEMS PAGE </a>
-								</p>
-							</div>
-				</div>
+    </div>
+    <div class="form-group">
+      <p class="bs-component">
+        <a href="/home/items" class="btn btn-warning">ITEMS PAGE </a>
+      </p>
+    </div>
   </div>
+</div>
 <br>
   <div class="field">
       <%= f.hidden_field :pos_x %>  

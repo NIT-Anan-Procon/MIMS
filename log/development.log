@@ -31728,3 +31728,594 @@ Processing by HomeController#get_image as HTML
   Rendered text template (0.0ms)
 Sent data  (2.6ms)
 Completed 200 OK in 7ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/home/items" for 192.168.231.1 at 2015-11-07 21:53:02 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#items as HTML
+Completed 401 Unauthorized in 25ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-11-07 21:53:02 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (1.8ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 256ms (Views: 239.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/sign_in" for 192.168.231.1 at 2015-11-07 21:53:32 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dcCrOUFHWAhIs6Sd6ub5ZyApfZfLMOIHNQ602SCi2YSUTzVGTLjuaVVSbxr7SiHbFIqE4IG7l2o//TyeLr9VzA==", "user"=>{"email"=>"makotom0330@docomo.ne.jp", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (2.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "makotom0330@docomo.ne.jp"]]
+Completed 401 Unauthorized in 21ms (ActiveRecord: 2.5ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dcCrOUFHWAhIs6Sd6ub5ZyApfZfLMOIHNQ602SCi2YSUTzVGTLjuaVVSbxr7SiHbFIqE4IG7l2o//TyeLr9VzA==", "user"=>{"email"=>"makotom0330@docomo.ne.jp", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.5ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 181ms (Views: 93.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 192.168.231.1 at 2015-11-07 21:53:49 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.9ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/registrations/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 99ms (Views: 94.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 192.168.231.1 at 2015-11-07 21:54:09 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fQjrICecTetelUV3bj8ScRvwC+3kbpb27AQrWkoUOOech3VfKmP7ikN0jvB/k8rNL1Pymq7l45vm96MdRAm0rw==", "user"=>{"email"=>"makotom0330@docomo.ne.jp", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'makotom0330@docomo.ne.jp' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "makotom0330@docomo.ne.jp"], ["encrypted_password", "$2a$10$l9vLEz4.ketMIWmgJq1MF.tFo2B5nWiOmFXV.dzlrRSD1FBg18/6q"], ["created_at", "2015-11-07 12:54:09.929769"], ["updated_at", "2015-11-07 12:54:09.929769"]]
+  [1m[35m (10.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2015-11-07 12:54:09.943655"], ["current_sign_in_at", "2015-11-07 12:54:09.943655"], ["last_sign_in_ip", "192.168.231.1"], ["current_sign_in_ip", "192.168.231.1"], ["sign_in_count", 1], ["updated_at", "2015-11-07 12:54:09.945090"], ["id", 4]]
+  [1m[36m (3.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://192.168.231.129:3000/home/items
+Completed 302 Found in 121ms (ActiveRecord: 15.3ms)
+
+
+Started GET "/home/items" for 192.168.231.1 at 2015-11-07 21:54:09 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered home/items.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 53ms (Views: 49.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/upload_page" for 192.168.231.1 at 2015-11-07 21:54:19 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 75ms (Views: 54.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/upload_page" for 192.168.231.1 at 2015-11-07 22:04:21 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 331ms (Views: 261.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-11-07 22:04:21 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/up_on_browser.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-11-07 22:04:21 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-b81c66837055debfa1ab3302d967bee36ac36117a0b00ef4d9772d25e7578f89.css?body=1" for 192.168.231.1 at 2015-11-07 22:04:21 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.231.1 at 2015-11-07 22:04:21 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/honoka.min.self-54ca1c0a362de64fe4162ab7f1a88d87c67d7b538452923a4f6de82592b57977.css?body=1" for 192.168.231.1 at 2015-11-07 22:04:21 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-11-07 22:04:21 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.231.1 at 2015-11-07 22:04:21 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.168.231.1 at 2015-11-07 22:04:22 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-11-07 22:04:22 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-11-07 22:04:22 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/up_on_browser.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-11-07 22:04:22 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.231.1 at 2015-11-07 22:04:22 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home/items" for 192.168.231.1 at 2015-11-07 22:06:41 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#items as HTML
+Completed 401 Unauthorized in 22ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-11-07 22:06:41 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 255ms (Views: 239.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_up" for 192.168.231.1 at 2015-11-07 22:07:04 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.5ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/registrations/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 84ms (Views: 81.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 192.168.231.1 at 2015-11-07 22:07:11 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2EbQI1wLIHtFSbOYuJwJvAzZ7lQYZJ+nxDAO70E29GNGCKp3woZTqZTINDdDIGfEq3nGXgwzg2wFDFOVqRHJnA==", "user"=>{"email"=>"makotom0330@docomo.ne.jp", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'makotom0330@docomo.ne.jp' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.2ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/registrations/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 195ms (Views: 86.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 192.168.231.1 at 2015-11-07 22:07:24 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.4ms)
+  Rendered /home/makoto/.rvm/gems/ruby-2.2.1/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 66ms (Views: 62.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 192.168.231.1 at 2015-11-07 22:08:15 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2XdM9Q4kopt6Q6/+s2oewasewtMQzCQszI0tpVrY/WNHOTahkKnRSavCKFFI1nC5DL7q2QSbOOcNsXDfsv/AnA==", "user"=>{"email"=>"makotom0330@docomo.ne.jp", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "makotom0330@docomo.ne.jp"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2015-11-07 13:08:15.261199"], ["sign_in_count", 2], ["updated_at", "2015-11-07 13:08:15.262218"], ["id", 4]]
+  [1m[35m (10.7ms)[0m  commit transaction
+Redirected to http://192.168.231.129:3000/home/items
+Completed 302 Found in 98ms (ActiveRecord: 11.5ms)
+
+
+Started GET "/home/items" for 192.168.231.1 at 2015-11-07 22:08:15 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#items as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered home/items.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 51ms (Views: 48.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/upload_page" for 192.168.231.1 at 2015-11-07 22:08:25 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 89ms (Views: 64.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/upload_page" for 192.168.231.1 at 2015-11-07 22:09:22 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 57ms (Views: 54.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/honoka.min.self-54ca1c0a362de64fe4162ab7f1a88d87c67d7b538452923a4f6de82592b57977.css?body=1" for 192.168.231.1 at 2015-11-07 22:09:22 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-b81c66837055debfa1ab3302d967bee36ac36117a0b00ef4d9772d25e7578f89.css?body=1" for 192.168.231.1 at 2015-11-07 22:09:22 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.231.1 at 2015-11-07 22:09:22 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/up_on_browser.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-11-07 22:09:22 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-11-07 22:09:22 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-11-07 22:09:22 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.231.1 at 2015-11-07 22:09:22 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.168.231.1 at 2015-11-07 22:09:22 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-11-07 22:09:22 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-11-07 22:09:22 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/up_on_browser.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-11-07 22:09:22 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.231.1 at 2015-11-07 22:09:22 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/upload_page" for 192.168.231.1 at 2015-11-07 22:10:09 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 59ms (Views: 56.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-11-07 22:10:09 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/honoka.min.self-54ca1c0a362de64fe4162ab7f1a88d87c67d7b538452923a4f6de82592b57977.css?body=1" for 192.168.231.1 at 2015-11-07 22:10:09 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/up_on_browser.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-11-07 22:10:09 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-b81c66837055debfa1ab3302d967bee36ac36117a0b00ef4d9772d25e7578f89.css?body=1" for 192.168.231.1 at 2015-11-07 22:10:09 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-11-07 22:10:09 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.231.1 at 2015-11-07 22:10:09 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.231.1 at 2015-11-07 22:10:09 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.168.231.1 at 2015-11-07 22:10:09 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-11-07 22:10:09 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-11-07 22:10:09 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/up_on_browser.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-11-07 22:10:09 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.231.1 at 2015-11-07 22:10:09 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/upload_page" for 192.168.231.1 at 2015-11-07 22:11:42 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 57ms (Views: 53.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-11-07 22:11:43 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-11-07 22:11:43 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.231.1 at 2015-11-07 22:11:43 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/up_on_browser.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-11-07 22:11:43 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-b81c66837055debfa1ab3302d967bee36ac36117a0b00ef4d9772d25e7578f89.css?body=1" for 192.168.231.1 at 2015-11-07 22:11:43 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/honoka.min.self-54ca1c0a362de64fe4162ab7f1a88d87c67d7b538452923a4f6de82592b57977.css?body=1" for 192.168.231.1 at 2015-11-07 22:11:43 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.231.1 at 2015-11-07 22:11:43 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.168.231.1 at 2015-11-07 22:11:43 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-11-07 22:11:43 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-11-07 22:11:43 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/up_on_browser.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-11-07 22:11:43 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.231.1 at 2015-11-07 22:11:43 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/upload_page" for 192.168.231.1 at 2015-11-07 22:13:01 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 279ms (Views: 224.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-11-07 22:13:01 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-b81c66837055debfa1ab3302d967bee36ac36117a0b00ef4d9772d25e7578f89.css?body=1" for 192.168.231.1 at 2015-11-07 22:13:01 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-11-07 22:13:01 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/up_on_browser.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-11-07 22:13:01 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/honoka.min.self-54ca1c0a362de64fe4162ab7f1a88d87c67d7b538452923a4f6de82592b57977.css?body=1" for 192.168.231.1 at 2015-11-07 22:13:01 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.231.1 at 2015-11-07 22:13:01 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.231.1 at 2015-11-07 22:13:01 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.168.231.1 at 2015-11-07 22:13:01 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-11-07 22:13:01 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-11-07 22:13:01 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/up_on_browser.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-11-07 22:13:01 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.231.1 at 2015-11-07 22:13:01 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/upload_page" for 192.168.231.1 at 2015-11-07 22:14:30 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 280ms (Views: 226.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/up_on_browser.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-11-07 22:14:31 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-b81c66837055debfa1ab3302d967bee36ac36117a0b00ef4d9772d25e7578f89.css?body=1" for 192.168.231.1 at 2015-11-07 22:14:31 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-11-07 22:14:31 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/honoka.min.self-54ca1c0a362de64fe4162ab7f1a88d87c67d7b538452923a4f6de82592b57977.css?body=1" for 192.168.231.1 at 2015-11-07 22:14:31 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.231.1 at 2015-11-07 22:14:31 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-11-07 22:14:31 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.231.1 at 2015-11-07 22:14:31 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.168.231.1 at 2015-11-07 22:14:31 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-11-07 22:14:31 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-11-07 22:14:31 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/up_on_browser.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-11-07 22:14:31 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.231.1 at 2015-11-07 22:14:31 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/upload_page" for 192.168.231.1 at 2015-11-07 22:15:36 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 280ms (Views: 226.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/honoka.min.self-54ca1c0a362de64fe4162ab7f1a88d87c67d7b538452923a4f6de82592b57977.css?body=1" for 192.168.231.1 at 2015-11-07 22:15:36 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.231.1 at 2015-11-07 22:15:36 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/up_on_browser.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-11-07 22:15:36 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-b81c66837055debfa1ab3302d967bee36ac36117a0b00ef4d9772d25e7578f89.css?body=1" for 192.168.231.1 at 2015-11-07 22:15:36 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-11-07 22:15:36 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-11-07 22:15:36 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.231.1 at 2015-11-07 22:15:36 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.168.231.1 at 2015-11-07 22:15:36 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-11-07 22:15:36 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-11-07 22:15:36 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/up_on_browser.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-11-07 22:15:36 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.231.1 at 2015-11-07 22:15:36 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/upload_page" for 192.168.231.1 at 2015-11-07 22:19:30 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UpOnBrowserController#upload_page as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered up_on_browser/upload_page.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 277ms (Views: 225.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/honoka.min.self-54ca1c0a362de64fe4162ab7f1a88d87c67d7b538452923a4f6de82592b57977.css?body=1" for 192.168.231.1 at 2015-11-07 22:19:31 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-11-07 22:19:31 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/up_on_browser.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-11-07 22:19:31 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-b81c66837055debfa1ab3302d967bee36ac36117a0b00ef4d9772d25e7578f89.css?body=1" for 192.168.231.1 at 2015-11-07 22:19:31 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.231.1 at 2015-11-07 22:19:31 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.231.1 at 2015-11-07 22:19:31 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.231.1 at 2015-11-07 22:19:31 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.168.231.1 at 2015-11-07 22:19:31 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-11-07 22:19:31 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-11-07 22:19:31 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/up_on_browser.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.231.1 at 2015-11-07 22:19:31 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.231.1 at 2015-11-07 22:19:31 +0900
+Cannot render console from 192.168.231.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
