@@ -18,6 +18,27 @@
     }
 </script>
 <html>
+
+  <div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="/home/items" class="navbar-brand">SeeK</a>
+	        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+	          <span class="icon-bar"></span>
+		          <span class="icon-bar"></span>
+			          <span class="icon-bar"></span>
+	        </button>
+     </div>
+     <div class="navbar-collapse collapse" id="navbar-main">
+       <ul class="nav navbar-nav">
+       <li><a href="../upload_page">Upload Page</a></li>
+       <li class="nav navvar-nav">
+			 <a href="../eventer">Eventer Page</a>
+
+	  </div>
+   </div>
+  </div>
+
     <h1><%= @item.i_name %></h1>
     <body onload="initialize()">
         <b>uploaded by <%= User.where(id: @item.f_id).first.email %></b>
@@ -49,5 +70,11 @@
 		  </tr>
 		</table>
     </body>
+
+							<div class="form-group">
+								<p class="bs-component">							
+									<a href="/home/items" class="btn btn-warning">ITEMS PAGE </a>
+								</p>
+							</div>
 
 </html>
