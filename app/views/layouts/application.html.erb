@@ -8,7 +8,6 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-
 <header>
   <nav>
     <!-- user_signed_in? はユーザがログインしているか調べるdeviseのHelperメソッド -->
@@ -29,5 +28,4 @@
 <p class="alert"><%= alert %></p>
 
 <%= yield.force_encoding("utf-8") %>
-
 </html>

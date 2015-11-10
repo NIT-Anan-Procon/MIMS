@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   get 'events/eventer'
 
-  devise_for :users
+  devise_for :users, :controllers => {
+    :registrations => 'users/registrations',
+    :sessions => 'users/sessions'
+  }
   get 'home/index'
   get 'home/items'
   post 'home/items'

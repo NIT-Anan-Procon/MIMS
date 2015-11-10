@@ -1,6 +1,9 @@
-<h2>Log in</h2>
-<p>test</p>
-
+<body background=<%= asset_path "login.png" %> style="background-repeat : no-repeat;" style="background-size:cover;" >
+<h2></h2>
+<br />
+<br />
+<br />
+<center>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -23,5 +26,6 @@
     <%= f.submit "Log in" %>
   </div>
 <% end %>
-
+</body>
+</center>
 <%= render "devise/shared/links" %>
