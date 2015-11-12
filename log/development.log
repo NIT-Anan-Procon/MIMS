@@ -39220,3 +39220,19 @@ Processing by HomeController#get_image as HTML
   Rendered text template (0.0ms)
 Sent data  (1.6ms)
 Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-11-12 23:42:02 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#items as HTML
+Completed 401 Unauthorized in 19ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-11-12 23:42:02 +0900
+Processing by Users::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (184.9ms)
+Completed 200 OK in 447ms (Views: 432.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/login-d019bd7cfe5643b457d025ebed14aa8124b66f451f4aa58d304426038bbb33d7.png" for ::1 at 2015-11-12 23:42:03 +0900
