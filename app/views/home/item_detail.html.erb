@@ -45,32 +45,32 @@
         <br>
         <br>
    <table border="1">
-   <tr>
-    <th>image</th>
+    <th>Image</th>
+  	<th>Google Map</th>
   </tr>
-  <tr>
       <td>
 <%= image_tag(url_for(action: 'get_image' , id: @item.id), size:'640x480')%>
       </td>
-  </tr>
-  <tr>
-    <th>GoogleMap</th>
-  </tr>
-  <tr>
             <td id="map_canvas" style="width:50%;height:400px;">
             </td>
-          </tr>
-  <tr>
-  <th>detail</th>
   </tr>
+</table>
+
+<br>
+<table border="1">
   <tr>
+		<th>Detail</th>
+
 <td style="width: 70px;border: 1px solid #000;word-break: break-all;">
+	<div Align="center">
   <%= @item.i_detail %>
+	</div>
 </td>
   </tr>
 </table>
     </body>
 
+<br>
 <div class="form-group">
 <p class="bs-component">
 <a href="/home/items" class="btn btn-warning">ITEMS PAGE </a>
