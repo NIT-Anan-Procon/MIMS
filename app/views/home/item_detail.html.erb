@@ -34,41 +34,50 @@
        <li><a href="../upload_page">Upload Page</a></li>
        <li class="nav navvar-nav">
        <a href="../eventer">Eventer Page</a>
-
     </div>
    </div>
   </div>
 
     <h1><%= @item.i_name %></h1>
     <body onload="initialize()">
-        <b>uploaded by <%= User.where(id: @item.f_id).first.email %></b>
+			uploaded by <em><%= User.where(id: @item.f_id).first.email %></em>
         <br>
         <br>
-   <table border="1">
-    <th>Image</th>
-  	<th>Google Map</th>
-  </tr>
-      <td>
-<%= image_tag(url_for(action: 'get_image' , id: @item.id), size:'640x480')%>
-      </td>
-            <td id="map_canvas" style="width:50%;height:400px;">
-            </td>
-  </tr>
-</table>
+
+
+<div class="bs-docs-section">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="bs-component">
+				<table class="table table-striped table-hover">
+					<thead>
+					<tr>
+						<th>Image</th>
+  					<th>Google Map</th>
+					</tr>
+				</thead>
+					<tr>
+    			  <td><%= image_tag(url_for(action: 'get_image' , id: @item.id), size:'640x480')%></td>
+    			  <td id="map_canvas" style="width:50%;height:400px;"></td>
+  				</tr>
+				</table>
+
 
 <br>
-<table border="1">
-  <tr>
-		<th>Detail</th>
-
-<td style="width: 70px;border: 1px solid #000;word-break: break-all;">
-	<div Align="center">
-  <%= @item.i_detail %>
+	<div class="row">
+		<div class="bs-component">
+			<table class="table table-striped table-hover">
+				<tr class="info">
+					<td Align="right">Detail</td>
+					<td style="word-break: break-all;">
+						<%= @item.i_detail %>
+					</td>
+				</tr>
+			</table>
+		</div>
 	</div>
-</td>
-  </tr>
-</table>
-    </body>
+
+</div>	
 
 <br>
 <div class="form-group">
